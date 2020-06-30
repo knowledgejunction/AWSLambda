@@ -1,4 +1,4 @@
-package com.github.md;
+package com.example;
 
 import java.util.Collections;
 import java.util.Map;

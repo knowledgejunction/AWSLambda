@@ -1,4 +1,4 @@
-package com.github.md;
+package com.example;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;

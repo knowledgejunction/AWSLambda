@@ -1,7 +1,6 @@
-package com.github.md;
+package com.example;
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import kotlin.Metadata;
 import kotlin.TypeCastException;
 import org.jetbrains.annotations.NotNull;
 

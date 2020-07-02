@@ -2,6 +2,7 @@ package com.example;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
@@ -19,7 +20,7 @@ public class Handler implements RequestHandler<ApiGatewayRequest, ApiGatewayResp
     }
 
     public Handler() {
-        this(DynamoDbClient.create());
+        this(DynamoDbClient.builder().region(Region.US_WEST_2).build());
     }
 
     public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
@@ -45,6 +46,6 @@ public class Handler implements RequestHandler<ApiGatewayRequest, ApiGatewayResp
         apiGatewayResponse.setStatusCode(200);
         apiGatewayResponse.setBody("Hello :" + name);
         apiGatewayResponse.setHeaders(headers);
-        return null;
+        return apiGatewayResponse;
     }
 }

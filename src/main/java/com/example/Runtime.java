@@ -1,7 +1,6 @@
 package com.example;
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import org.jetbrains.annotations.NotNull;
 
 public final class Runtime {
    private final RuntimeApi runtimeApi;
@@ -14,7 +13,7 @@ public final class Runtime {
       runtimeApi.sendResponse(apiGatewayResponse);
    }
 
-   public Runtime(@NotNull RuntimeApi runtimeApi, @NotNull RequestHandler handler) {
+   public Runtime(RuntimeApi runtimeApi,RequestHandler handler) {
       super();
       this.runtimeApi = runtimeApi;
       this.handler = handler;

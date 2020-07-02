@@ -11,8 +11,6 @@ repositories {
 dependencies {
     compile("org.slf4j:slf4j-log4j12:1.7.9")
     compile("commons-logging:commons-logging:1.2")
-
-    compile("org.http4k:http4k-core:3.103.2")
     compile("com.amazonaws:aws-lambda-java-core:1.2.0")
     compile("com.fasterxml.jackson.core:jackson-databind:2.9.6")
     compile group: 'com.fasterxml.jackson.module', name: 'jackson-modules-java8', version: '2.9.6', ext: 'pom'

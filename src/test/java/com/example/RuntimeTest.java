@@ -24,6 +24,7 @@ public class RuntimeTest {
       DynamoDbClient dbClient = DynamoDbClient.builder().region(Region.US_WEST_2)
               .credentialsProvider(StaticCredentialsProvider.create(AwsBasicCredentials.create("dummy", "dummy")))
               .endpointOverride(new URI("http://" + dynamoHost + ':' + dynamoPort)).build();
+      new DynamoDBSetup(dbClient).createTables();
 
       Class handlerClass = Class.forName("com.example.Handler");
       handlerClass.newInstance();

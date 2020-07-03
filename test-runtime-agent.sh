@@ -25,3 +25,4 @@ docker run --rm --name graal -v $(pwd):/working oracle/graalvm-ce:${GRAAL_VERSIO
             echo '*** running native-image-configure'; \
             ./native-image-configure process-trace --output-dir=${NATIVE_IMAGE_CONFIG_DIR} /tmp/trace.json; \
            "
+docker stop dynamodb-local

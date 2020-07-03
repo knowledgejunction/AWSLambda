@@ -1,0 +1,49 @@
+
+service: kotlin-graalvm-custom-runtime-talk
+
+provider:
+  name: aws
+  runtime: java8
+  region: eu-central-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Resource: "*"
+      Action:
+        - "dynamodb:GetItem"
+        - "dynamodb:PutItem"
+
+package:
+  individually: true
+
+functions:
+  hello:
+    handler: com.github.md.Handler
+    events:
+      - http:
+          path: hello/{name}
+          method: get
+    package:
+      artifact: build/libs/package-1.0.jar
+  hello-runtime:
+    handler: com.github.md.Handler
+    runtime: provided
+    events:
+      - http:
+          path: hello-runtime/{name}
+          method: get
+    package:
+      artifact: build/package/bundle.zip
+
+resources:
+  Resources:
+    usersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: greetings
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH

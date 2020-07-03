@@ -38,7 +38,8 @@ public class Handler implements RequestHandler<ApiGatewayRequest, ApiGatewayResp
                 .s(name)
                 .build());
 
-        this.dynamoClient.putItem(PutItemRequest.builder().tableName("greetings")
+        String tableName = System.getenv("greetings")!=null?System.getenv("greetings"):"greetings";
+        this.dynamoClient.putItem(PutItemRequest.builder().tableName(tableName)
                 .item(items).build());
         Map<String, Object> headers = new HashMap<>();
         headers.put("X-Powered-By", "AWS Lambda and Serverless");

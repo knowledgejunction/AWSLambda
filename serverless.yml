@@ -17,7 +17,7 @@ package:
 
 functions:
   hello:
-    handler: com.github.md.Handler
+    handler: com.example.Handler
     events:
       - http:
           path: hello/{name}
@@ -25,7 +25,7 @@ functions:
     package:
       artifact: build/libs/package-1.0.jar
   hello-runtime:
-    handler: com.github.md.Handler
+    handler: com.example.Handler
     runtime: provided
     events:
       - http:

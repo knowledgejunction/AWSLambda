@@ -1,5 +1,5 @@
 #!/bin/sh
-./gradlew testJar
+./gradlew clean testJar
 
 rm -rf build/package
 mkdir build/package

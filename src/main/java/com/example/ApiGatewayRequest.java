@@ -1,6 +1,6 @@
 package com.example;
 
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 public class ApiGatewayRequest {
@@ -9,13 +9,13 @@ public class ApiGatewayRequest {
 
    private String httpMethod;
 
-   private Map<String,Object> headers= Collections.emptyMap();
+   private Map<String,Object> headers;
 
-   private Map<String,Object>  queryStringParameters=Collections.emptyMap();
+   private Map<String,Object>  queryStringParameters;
 
-   private Map<String,Object>  pathParameters=Collections.emptyMap();
+   private Map<String,Object>  pathParameters;
 
-   private String body = "";
+   private String body;
 
    public String getPath() {
       return path;
@@ -62,6 +62,21 @@ public class ApiGatewayRequest {
    }
 
    public void setBody(String body) {
+      this.body = body;
+   }
+
+   public ApiGatewayRequest() {
+      pathParameters = new HashMap<>();
+      headers = new HashMap<>();
+      queryStringParameters = new HashMap<>();
+   }
+
+   public ApiGatewayRequest(String path, String httpMethod, Map<String, Object> headers, Map<String, Object> queryStringParameters, Map<String, Object> pathParameters, String body) {
+      this.path = path;
+      this.httpMethod = httpMethod;
+      this.headers = headers;
+      this.queryStringParameters = queryStringParameters;
+      this.pathParameters = pathParameters;
       this.body = body;
    }
 }

@@ -15,7 +15,6 @@ dependencies {
     compile("commons-logging:commons-logging:1.2")
     compile("com.amazonaws:aws-lambda-java-core:1.2.0")
     compile("com.fasterxml.jackson.core:jackson-databind:2.9.6")
-    compile group: 'com.fasterxml.jackson.module', name: 'jackson-modules-java8', version: '2.9.6', ext: 'pom'
     compile("software.amazon.awssdk:dynamodb:2.5.10")
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

@@ -43,6 +43,7 @@ public class AwsRuntimeApi implements RuntimeApi {
             validateResponse(connection);
             final String responseBody = readResponseBody(connection);
             this.setCurrentRequestId(connection.getHeaderField("lambda-runtime-aws-request-id"));
+            System.out.println("****** Request *****"+responseBody);
             ApiGatewayRequest  request = objectMapper.readValue(responseBody,ApiGatewayRequest.class);
             return request;
         } catch (ProtocolException e) {

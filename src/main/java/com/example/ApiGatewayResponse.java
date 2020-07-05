@@ -40,4 +40,14 @@ public class ApiGatewayResponse {
    public void setBase64Encoded(boolean base64Encoded) {
       isBase64Encoded = base64Encoded;
    }
+
+   public ApiGatewayResponse() {
+   }
+
+   public ApiGatewayResponse(int statusCode, String body, Map<String, Object> headers, boolean isBase64Encoded) {
+      this.statusCode = statusCode;
+      this.body = body;
+      this.headers = headers;
+      this.isBase64Encoded = isBase64Encoded;
+   }
 }

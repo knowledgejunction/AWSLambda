@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.IOException;
 import java.util.UUID;
 
 public  class MockRuntime implements RuntimeApi {
@@ -16,6 +17,11 @@ public  class MockRuntime implements RuntimeApi {
    }
 
    public ApiGatewayRequest getInvocation() {
+      try {
+         objectMapper.writeValueAsString(request);
+      } catch (JsonProcessingException e) {
+         e.printStackTrace();
+      }
       return request;
    }
 
@@ -38,5 +44,13 @@ public  class MockRuntime implements RuntimeApi {
       this.request = request;
       this.objectMapper = new ObjectMapper().disable(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES);
       this.currentRequestId = UUID.randomUUID().toString();
+      try {
+         String jsonValue = objectMapper.writeValueAsString(request);
+         ApiGatewayRequest temp = objectMapper.readValue(jsonValue,ApiGatewayRequest.class);
+      } catch (JsonProcessingException e) {
+         e.printStackTrace();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
    }
 }

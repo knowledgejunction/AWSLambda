@@ -2,7 +2,7 @@ package com.example;
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-public final class Runtime {
+public class Runtime {
    private final RuntimeApi runtimeApi;
    private final RequestHandler handler;
 

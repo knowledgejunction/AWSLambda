@@ -6,7 +6,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
 
 
-public final class CustomContext implements Context {
+public class CustomContext implements Context {
     private final String requestId;
 
     public String getAwsRequestId() {

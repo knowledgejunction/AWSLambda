@@ -1,0 +1,70 @@
+[
+  
+  {
+    "name":"com.example.ApiGatewayRequest",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name":"com.example.ApiGatewayResponse",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name":"com.example.Handler",
+    "methods":[{ "name":"<init>", "parameterTypes":[] }]
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+    "methods":[{ "name":"<init>", "parameterTypes":[] }]
+  },
+  {
+    "name":"java.lang.String"
+  },
+  {
+    "name":"java.lang.Thread"
+  },
+  {
+    "name":"java.util.ArrayList",
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name":"java.util.LinkedHashMap",
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name":"org.apache.commons.logging.LogFactory"
+  },
+  {
+    "name":"org.apache.commons.logging.impl.Log4JLogger",
+    "methods":[{ "name":"<init>", "parameterTypes":["java.lang.String"] }]
+  },
+  {
+    "name":"org.apache.commons.logging.impl.LogFactoryImpl",
+    "methods":[{ "name":"<init>", "parameterTypes":[] }]
+  },
+  {
+    "name":"org.apache.commons.logging.impl.WeakHashtable",
+    "methods":[{ "name":"<init>", "parameterTypes":[] }]
+  },
+  {
+    "name":"org.apache.log4j.Category"
+  },
+  {
+    "name":"org.apache.log4j.CategoryKey"
+  },
+  {
+    "name":"org.apache.log4j.Logger"
+  },
+  {
+    "name":"org.apache.log4j.helpers.Loader"
+  },
+  {
+    "name":"sun.misc.Unsafe",
+    "fields":[{"name":"theUnsafe"}]
+  }
+]
